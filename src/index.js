@@ -98,7 +98,7 @@ const init = () => {
 
     files.addEventListener('change',(e)=>{
         const {files} = e.target;
-        handleFileToUpload(files)
+        handleFileToUpload(files);
     })
 
     const uploadFiles = async (files) =>{
@@ -134,3 +134,18 @@ const init = () => {
 if('draggable' in document.createElement('div')){
     init();
 }
+
+/////
+
+let user = {
+    firstname:'mohamed',
+    lastname:'abdelaal',
+    age:25
+}
+
+const func = function(){
+    console.log(this.firstname);
+}
+
+let funcuser = func.bind(user);
+funcuser();
